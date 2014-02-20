@@ -1,0 +1,3 @@
+juan,20,9.2,m
+fabiola,22,10,f
+pepe,31,6.2,m
