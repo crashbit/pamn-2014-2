@@ -12,7 +12,4 @@ int main(){
 	*p = 4;
 	p--;
 	printf("%d\n", *p);
-
-
-
 }

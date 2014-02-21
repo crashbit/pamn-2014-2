@@ -3,10 +3,10 @@
 int main(){
 	int *p;
 	int x;
-
-	*p = 14;
 	
-
+	x = 3;
+	p = &x;
+	*p = 22;
 	printf("%d\n", *p);
 
 
