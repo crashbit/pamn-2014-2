@@ -1,3 +1,5 @@
 juan,20,9.2,m
 fabiola,22,10,f
 pepe,31,6.2,m
+pedro,31,7.0,m
+luisa,23,7.8,f
