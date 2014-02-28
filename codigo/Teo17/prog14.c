@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
+
 struct Alumno{
 	char nombre[20];
 	int edad;
@@ -14,6 +15,7 @@ struct Alumno{
 struct Alumno *creaNodo();
 void insertaNodo(struct Alumno *lista, struct Alumno *nodo);
 void muestraLista(struct Alumno *lista);
+void pideDatos(struct Alumno *nodo);
 
 void cortaycarga(char *cadena, struct Alumno *alumno);
 
@@ -34,6 +36,7 @@ int main(){
 
 
 	lista = creaNodo();
+	//Ahora desde archivo
 	while(!feof(fp)){
 		fi = creaNodo();
 		fscanf(fp,"%s\n",cadena);
@@ -45,8 +48,13 @@ int main(){
 	temp = lista->sig;
 	muestraLista(temp);
 
-
-
+	//Ahora desde el teclado
+	fi = creaNodo();
+	pideDatos(fi);
+	printf("Regreso: %s\n", fi->nombre);
+	insertaNodo(lista, fi);
+	temp = lista;
+	muestraLista(temp);
 }
 
 struct Alumno *creaNodo(){
@@ -65,9 +73,11 @@ void muestraLista(struct Alumno *lista){
 	struct Alumno *temp;
 	temp = lista;
 	while(temp != NULL){
-		printf("%s tiene %d annos y un promedio de %f\n", temp->nombre, temp->edad,temp->promedio);
+		printf("%s \n", (temp->sig)->nombre);
 		temp = temp->sig;
 	}
+
+	printf("\n");
 }
 
 
@@ -94,4 +104,23 @@ void cortaycarga(char *cadena, struct Alumno *alumno){
 		i++;
 
 	} 
+}
+
+void pideDatos(struct Alumno *nodo){
+
+	printf("Introduce los siguientes datos:\n");
+
+	printf("Nombre :");
+	scanf("%s", nodo->nombre);
+
+	printf("edad :");
+	scanf("%d", &nodo->edad);
+
+	printf("Promedio :");
+	scanf("%f", &nodo->promedio);
+
+
+	printf("%s", nodo->nombre);
+	//printf("sexo (f/m) :");
+	//scanf("%c", &nodo->sexo);
 }
