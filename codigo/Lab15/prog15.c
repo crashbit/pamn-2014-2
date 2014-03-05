@@ -28,7 +28,7 @@ int main(){
 		printf("%d\t%f\t%f\t%f\t%f\n", i, a, b, c, fabs(a-b));
 		printf("\t%f\t%f\t%f\n", f(a), f(b), f(c));
 		i++;
-	}while(fabs(a-b)>tolerancia || f(c)!=0);
+	}while(fabs(a-b)>tolerancia || f(c)==0);
 
 	return 0;
 }
