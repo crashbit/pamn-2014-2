@@ -1,8 +1,8 @@
 public abstract class Ordenador{
 	
 	void ordenar(Object lista[], HerramientaComparar herramienta){
-		ordernar(lista, herramienta, false);
+		ordenar(lista, herramienta, false);
 	}
 
-	public abstract void ordernar(Object lista[], HerramientaComprar herramienta, boolean tipo_orden);	
+	public abstract void ordenar(Object lista[], HerramientaComparar herramienta, boolean tipo_orden);	
 }
