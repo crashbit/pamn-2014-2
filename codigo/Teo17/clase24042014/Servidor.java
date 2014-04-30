@@ -6,23 +6,23 @@ public class Servidor{
 	public static void main(String args[]){
 
 		ServerSocket servicio;
-		OutputStream salida;
-		InputStream entrada;
 
 		try{
 			servicio = new ServerSocket(9000);
 			System.out.println("Servicio activo");
 			Socket usuario = servicio.accept();
-	
-			salida = usuario.getOutputStream();
-			entrada = usuario.getInputStream();
+			String cadena;
 
-			DataInputStream flujo1 = new DataInputStream(entrada);
-			DataOutputStream flujo2 = new DataOutputStream(salida);
+			PrintWriter salida = new PrintWriter(usuario.getOutputStream(), true);
 			
-
-			flujo2.writeBytes("hola usuario");
-			System.out.println(flujo1.readDouble());
+			InputStreamReader isr = new InputStreamReader(usuario.getInputStream());
+			BufferedReader entrada = new BufferedReader(isr);	
+	
+			salida.println("Bienvenido usuario: ");
+			salida.println("login: ");
+			cadena = entrada.readLine();
+			salida.println("Usted es el usuario: " + cadena);
+			System.out.println("El usuario escribio: " + cadena);_	
 			usuario.close();
 
 
