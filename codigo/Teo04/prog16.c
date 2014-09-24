@@ -36,7 +36,7 @@ void corta(char *cadena){
 	i++;
 		while(item != NULL){
 			printf("%s\n", item);
-			item = strtok(NULL,separador);
+			item = strtok(NULL,separador);//preofe porque en esta parte se apuntaba al NULL?
 			if(i==1)printf("%d\n", atoi(item)*10);
 			i++;
 		}
